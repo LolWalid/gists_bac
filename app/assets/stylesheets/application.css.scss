@@ -13,23 +13,5 @@
  *= require_tree .
  *= require_self
  */
-
-.alert {
-  color: #fff;
-}
-
-.alert-danger {
-  background-color: red;
-}
-
-.alert-info {
-  background-color: blue;
-}
-
-.alert-success {
-  background-color: green;
-}
-
-.alert-warning {
-  background-color: orange;
-}
+@import "bootstrap-sprockets";
+@import "bootstrap";

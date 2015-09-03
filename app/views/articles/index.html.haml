@@ -1,6 +1,6 @@
 %h1 Listing articles
 
-= message_flash
+= bootstrap_flash
 
 %table
   %thead
@@ -16,7 +16,7 @@
   %tbody
     - @articles.each do |article|
       %tr
-        %td= article.user.email if article.user
+        %td= link_to article.user.email, user_articles_path(id: article.user.id) if article.user
         %td= article.description
         %td= article.filename
         %td= article.content
