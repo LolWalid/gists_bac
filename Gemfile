@@ -54,3 +54,5 @@ gem 'haml-rails'
 gem 'devise'
 
 gem 'twitter-bootstrap-rails'
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
