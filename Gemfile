@@ -50,3 +50,4 @@ end
 gem 'haml'
 gem 'haml-rails'
 
+gem 'devise'
