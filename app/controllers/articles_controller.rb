@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :belongs_to_current_user, only: [:edit, :update, :destroy]
 
   # GET /articles
   # GET /articles.json
@@ -64,6 +65,12 @@ class ArticlesController < ApplicationController
   end
 
   private
+    def belongs_to_current_user
+      unless current_user.article_ids.include? @article.id
+        redirect_to :back, alert: "Not allowed."
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])

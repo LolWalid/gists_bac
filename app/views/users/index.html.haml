@@ -5,7 +5,7 @@
     %li
       = user.email
       ,
-      / =link_to 'View Article', "users/"+ user.id + "/articles"
+      =link_to 'View Article', user_articles_path(id: user.id)
 
 %br
 
