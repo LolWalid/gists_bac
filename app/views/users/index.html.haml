@@ -1,0 +1,12 @@
+%h1 Users
+
+%ul
+  - @users.each do |user|
+    %li
+      = user.email
+      ,
+      / =link_to 'View Article', "users/"+ user.id + "/articles"
+
+%br
+
+= link_to 'New Article', new_article_path

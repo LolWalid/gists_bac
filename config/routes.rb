@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :articles
+  get 'users/:id/articles' => 'users#articles'
+
   resources :articles
   root 'articles#index'
 
   resources :articles
+  resources :users
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
