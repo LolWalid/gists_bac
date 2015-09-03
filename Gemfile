@@ -44,6 +44,7 @@ group :development, :test do
 
   # Debug gem
   gem 'pry'
+  gem 'better_errors'
 end
 
 # Use haml to make life easier
@@ -51,3 +52,5 @@ gem 'haml'
 gem 'haml-rails'
 
 gem 'devise'
+
+gem 'twitter-bootstrap-rails'
