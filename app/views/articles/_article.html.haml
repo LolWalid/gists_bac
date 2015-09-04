@@ -1,0 +1,20 @@
+.box
+  .row
+    .pull-left
+      = link_to article.user.email, user_articles_path(id: article.user.id)
+      \/
+      = link_to article.filename, article
+    -if current_user and current_user.articles.include? article
+      .pull-right
+        = link_to 'Edit', edit_article_path(article)
+        \|
+        = link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  .row
+    Created at
+    = article.created_at.strftime("%d/%m/%Y %H:%M")
+  .row.css-description
+    = article.description
+
+  .row.css-content
+    = raw(article.content.gsub(/\n/, '<br/>'))

@@ -1,18 +1,5 @@
-%p#notice= notice
+= bootstrap_flash
 
-%p
-  %b Description:
-  = @article.description
-%p
-  %b Filename:
-  = @article.filename
-%p
-  %b Content:
-  = @article.content
-%p
-  %b User:
-  = @article.user
+= render 'articles/article', article: @article
 
-= link_to 'Edit', edit_article_path(@article)
-\|
 = link_to 'Back', articles_path

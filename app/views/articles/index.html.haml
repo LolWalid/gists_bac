@@ -1,29 +1,12 @@
-%h1 Listing articles
+.row.row-header
+  %h1
+    .pull-left
+      Listing articles
+    .pull-right
+      = link_to 'New Article', new_article_path
 
 = bootstrap_flash
 
-%table
-  %thead
-    %tr
-      %th User
-      %th Description
-      %th Filename
-      %th Content
-      %th
-      %th
-      %th
+- @articles.each do |article|
+  = render 'articles/article', article: article
 
-  %tbody
-    - @articles.each do |article|
-      %tr
-        %td= link_to article.user.email, user_articles_path(id: article.user.id) if article.user
-        %td= article.description
-        %td= article.filename
-        %td= article.content
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Article', new_article_path
