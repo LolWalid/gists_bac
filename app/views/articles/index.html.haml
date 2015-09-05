@@ -5,8 +5,10 @@
     .pull-right
       = link_to 'New Article', new_article_path
 
+.row.row-header
+  = render 'articles/search_form', search: @search
+
 = bootstrap_flash
 
 - @articles.each do |article|
   = render 'articles/article', article: article
-

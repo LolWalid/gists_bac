@@ -57,4 +57,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
+gem 'searchlight'
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
