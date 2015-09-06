@@ -17,4 +17,5 @@
     = article.description
 
   .row.css-content
-    = raw(article.content.gsub(/\n/, '<br/>'))
+    %p
+      = raw(article.content.gsub(/\n/, '<br/>'))
