@@ -3,12 +3,13 @@
     .pull-left
       Listing articles
     .pull-right
-      = link_to 'New Article', new_article_path
+      = link_to raw('New Article <span class=" glyphicon glyphicon-plus-sign"></span>'), new_article_path, :class => 'btn btn-success'
 
 .row.row-header
   = render 'articles/search_form', search: @search
 
 = bootstrap_flash
 
-- @articles.each do |article|
-  = render 'articles/article', article: article
+#articles
+  - @articles.each do |article|
+    = render article

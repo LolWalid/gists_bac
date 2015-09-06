@@ -9,7 +9,10 @@ class UsersController < ApplicationController
     @search  = ArticleSearch.new(search_params)
     @search_params = search_params
     @articles = @search.results.where(user: @user)
-    render template: "articles/index"
+    respond_to do |format|
+      format.html {render template: "articles/index"}
+      format.js {render template: "articles/index"}
+    end
   end
 
   private

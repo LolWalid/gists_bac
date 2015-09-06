@@ -9,6 +9,10 @@ class ArticlesController < ApplicationController
     @search  = ArticleSearch.new(search_params)
     @search_params = search_params
     @articles = @search.results
+    respond_to do |format|
+      format.html
+      format.js { @articles }
+    end
   end
 
   # GET /articles/1

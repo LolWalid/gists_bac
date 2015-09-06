@@ -1,5 +1,5 @@
-= form_for @search, url: request.original_url, method: :get, html: {class: "navbar-form"} do |f|
+= form_for @search, url: request.original_url, method: :get, remote: true, html: {class: "navbar-form"} do |f|
   .form-group
     = f.text_field :filename, class: "form-control", placeholder: :filename
   .pull-right
-    %button.btn.btn-success.btn-sm.btn-search{type: :submit} Valider
+    %button.btn.btn-warning.btn-sm.btn-search{type: :submit} Valider
