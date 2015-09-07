@@ -24,16 +24,16 @@ DROP TABLE IF EXISTS `articles`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `filename` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `filename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `content` text COLLATE utf8_unicode_ci,
-  `user_id` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `index_articles_on_user_id` (`user_id`),
   CONSTRAINT `fk_rails_3d31dad1cc` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `articles` (
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-INSERT INTO `articles` VALUES (5,'dsa','dsasd','dasda',1,'2015-09-03 09:30:59','2015-09-03 09:30:59'),(6,'cxczcz','cxzcxz','walid one9ninety',2,'2015-09-03 09:36:47','2015-09-03 09:36:47');
+INSERT INTO `articles` VALUES (13,'This is a test for c++ file and tabulation','test.cpp','// \'Hello World!\' program \r\n\r\n#include <iostream>\r\n \r\nint main()\r\n{\r\n  std::cout << \"Hello World!\" << std::endl;\r\n  return 0;\r\n}',2,'2015-09-06 11:23:48','2015-09-07 17:38:13'),(14,'2nd article: python','test.py','def main():\r\n    print \'Hello World\'\r\n\r\nif __name__ == \'__main__\':\r\n    main()',2,'2015-09-07 17:46:15','2015-09-07 17:46:15'),(15,'1st walid article ','ruby_hello.rb','def main\r\n  puts \"Hello world\"\r\nend\r\n\r\nmain',1,'2015-09-07 18:01:40','2015-09-07 18:01:56');
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `schema_migrations` (
 
 LOCK TABLES `schema_migrations` WRITE;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
-INSERT INTO `schema_migrations` VALUES ('20150903083310'),('20150903085124');
+INSERT INTO `schema_migrations` VALUES ('20150903083310'),('20150903085124'),('20150907171912'),('20150907172822');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +102,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'walid.seoudi@gmail.com','$2a$10$n2sFZLNWd5acfMNmKyTQeOBLRSuLEGUR1mFNzP7i0fnD6Wo9mMjF2',NULL,NULL,NULL,4,'2015-09-03 09:31:59','2015-09-03 09:30:33','127.0.0.1','::1','2015-09-03 08:56:26','2015-09-03 09:31:59'),(2,'walid@one9ninety.com','$2a$10$sDkKwhUWFuZWmsjpaHT5B.D19ZW/XVO1DXDXmdyItUYiW7R3QIHJ6',NULL,NULL,NULL,1,'2015-09-03 09:36:40','2015-09-03 09:36:40','::1','::1','2015-09-03 09:36:40','2015-09-03 09:36:40');
+INSERT INTO `users` VALUES (1,'walid.seoudi@gmail.com','$2a$10$n2sFZLNWd5acfMNmKyTQeOBLRSuLEGUR1mFNzP7i0fnD6Wo9mMjF2',NULL,NULL,NULL,9,'2015-09-07 17:59:19','2015-09-06 09:39:30','::1','::1','2015-09-03 08:56:26','2015-09-07 17:59:19'),(2,'walid@one9ninety.com','$2a$10$sDkKwhUWFuZWmsjpaHT5B.D19ZW/XVO1DXDXmdyItUYiW7R3QIHJ6',NULL,NULL,NULL,9,'2015-09-07 17:06:57','2015-09-06 11:05:29','::1','::1','2015-09-03 09:36:40','2015-09-07 17:06:57');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -115,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-03 11:44:43
+-- Dump completed on 2015-09-07 20:04:58
