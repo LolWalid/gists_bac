@@ -16,6 +16,5 @@
   .row.css-description
     = article.description
 
-  .row.css-content
-    %p
-      = raw(article.content.gsub(/\n/, '<br/>'))
+  %textarea.row.css-content{readonly: true}
+    = article.content.gsub(/\n/, '')
