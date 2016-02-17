@@ -31,4 +31,4 @@ gem 'autoprefixer-rails'
 gem 'searchlight'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
+gem 'puma'
